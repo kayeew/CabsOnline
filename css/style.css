@@ -1,0 +1,110 @@
+/* Kayee 2019 */
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+.hideOverflow {
+  overflow: hidden;
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+     background: #1C2331!important;
+  }
+}
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.top-nav-collapse {
+  background-color: #1C2331; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1C2331; 
+  } 
+  .mask {
+    margin: 20% 5% 0 0;
+  }
+}
+
+
+.landingPageImage { 
+  background-image: url('../images/cover.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: #fff;
+  padding: 10% 0 0 5%;
+}
+
+.mask {
+  padding: 5% 2% 2% 2%;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.mask hr {
+  height: 1px;
+  background-color: rgb(255, 255, 255, 0.5);
+  border: none;
+
+}
+
+#displayOptions {
+  width: 280px;
+}
+@media only screen and (max-width: 768px) {
+  #displayOptions {
+    width: 250px;
+  }
+}
+
+#bookingList {
+  margin: 0 2% 0 2%;
+}
+#bookingNumber, #searchKeyword {
+  min-width: 200px;
+}
+/*===============================================*/
+/* Multi Step Modal Form */
+/*===============================================*/
+
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+} 
+
+#datetimeErrorMessage {
+  color: red;
+}

@@ -1,0 +1,252 @@
+<!-- 
+	Kayee 2019
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Kayee Wong">
+
+	<title>Booking</title>
+    <link rel="shortcut icon" href="images/icon.png"/>
+
+	<!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body class="hideOverflow">
+	<!-- Navbar -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-success">
+		<div class="container">
+			<!-- Logo -->
+			<a class="navbar-brand" href="booking.html">CabsOnline</a>
+
+			<!-- Collapse -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Links -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Left navbar links -->
+				<ul class="navbar-nav mr-auto">
+				</ul>
+				<!-- Right navbar links -->
+				<ul class="navbar-nav nav-flex-icons">
+					<li class="nav-item">
+					<a class="nav-link" href="booking.html">Home
+					</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="admin.html">Admin Page</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- End of Navbar -->
+
+	<div class="view full-page-intro landingPageImage">
+		<!-- Mask & flexbox options-->
+		<div class="d-flex justify-content-center align-items-center">
+			<!-- Content -->
+			<div class="container">
+				<!--Grid row-->
+				<div class="row wow fadeIn">
+					<!--Grid column-->
+					<div class="col-md-6 mb-4 white-text text-center text-md-left mask">
+			            <h1 class="display-4 font-weight-bold">CabOnline</h1>
+			            <hr>
+			            <p><strong>Easy, Quick & Safe</strong></p>
+			            <p class="mb-4 d-md-block">
+			            	Guaranteed cheapered than Uber. Find a cab now with just one click away.
+			           	</p>
+			            <button type="button" class="btn btn-raised btn-success" data-toggle="modal" data-target="#bookingModal">
+						  	Book Now
+						</button>
+		          	</div>
+					<!--Grid column-->
+				</div>
+				<!--Grid row-->
+			</div>
+			<!-- Content -->
+		</div>
+		<!-- Mask & flexbox options-->
+	</div>
+	<!-- Full Page Intro -->
+
+	<!-- Booking Modal -->
+	<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form id="bookingForm">
+					<h4 class="text-center" style="margin-top: 30px">Book a Cab</h4>
+					<!-- One "tab" for each step in the form: -->
+					<!-- Step 1 -->
+					<div class="tab modal-body">
+						<h5>Booking Details:</h5>
+						<div class="form-group">
+							<label class="bmd-label-floating">Name</label>
+							<input class="form-control" id="name" type="text" name="name" maxlength="20" required>
+						</div>
+						<div class="form-group">
+							<label class="bmd-label-floating">Phone Contact</label>
+							<input class="form-control" id="phoneContact" type="text" name="phoneContact" maxlength="15" onkeypress="validate(event);" required>
+						</div>
+					  	<div class="form-group">
+						    <label class="bmd-label-floating">Number of Passengers</label>
+						    <input class="form-control" id="numPassengers" type="text" name="numPassengers" maxlength="2" onkeypress="validate(event);" required>
+					  	</div>
+					</div>
+
+					<!-- Step 2 -->
+					<div class="tab modal-body">
+						<h5>Pickup Address:</h5>
+						<div class="form-row">
+					        <div class="col">
+					        	<div class="form-group">
+									<label class="bmd-label-floating">Unit Number</label>
+									<input class="form-control" id="unitNum" type="text" name="unitNum" maxlength="5" onkeypress="validate(event);" required>
+								</div>
+					        </div>
+					        <div class="col">
+					        	<div class="form-group">
+									<label class="bmd-label-floating">Street Number</label>
+									<input class="form-control" id="streetNum" type="text" name="streetNum" maxlength="5" onkeypress="validate(event);" required>
+								</div>
+					        </div>
+					    </div>
+					    <div class="form-row">
+					        <div class="col">
+								<div class="form-group">
+									<label class="bmd-label-floating">Street Name</label>
+									<input class="form-control" id="streetName" type="text" name="streetName" maxlength="20" required>
+								</div>
+					        </div>
+					        <div class="col">
+								<div class="form-group">
+									<label class="bmd-label-floating">Suburb</label>
+									<input class="form-control" id="suburb" type="text" name="suburb" maxlength="20" required>
+								</div>
+					        </div>
+					    </div>
+					    <div class="form-group">
+							<label class="bmd-label-floating">Destination Address</label>
+							<input class="form-control" id="destination" type="text" name="destination" maxlength="30" required>
+						</div>
+					</div>
+
+					<!-- Step 3 -->
+					<div class="tab modal-body">
+						<h5>Pickup Time/Date:</h5>
+					  	<div class="form-row">
+					        <div class="col">
+					        	<div class="form-group">
+									<label class="bmd-label-floating">Pickup Time</label>
+									<input id="pickupTime" type="time" class="form-control datetimepicker-input" data-target="#datetimepicker"/>
+								</div>
+					        </div>
+					        <div class="col">
+					        	<div class="form-group">
+									<input class="form-control" type="date" id="pickupDate" name="pickupDate" required>
+								</div>
+					        </div>
+					        <div id="datetimeErrorMessage"></div>
+					    </div>
+					</div>
+					<div class="tab modal-body">
+						<h5>Booking Confirmation:</h5>
+					  	<div class="form-row">
+					        Do you confirm your cab booking?
+					    </div>
+					</div>
+					
+    				<div class="d-flex justify-content-center align-items-center">
+					<button type="button" class="btn btn-raised btn-success" id="prevBtn" onclick="nextPrev(-1)">Previous</button>&nbsp;&nbsp;
+					<button type="button" class="btn btn-raised btn-success" id="nextBtn" onclick="nextPrev(1)">Next</button>
+					<button type="button" class="btn btn-raised btn-success" id="submitBtn" onclick="booking()" style="display: none">Submit</button>
+					</div>
+
+					<!-- Circles which indicates the steps of the form: -->
+					<div style="text-align:center;margin-top:40px;">
+						<span class="step"></span>
+						<span class="step"></span>
+						<span class="step"></span>
+						<span class="step"></span>
+					</div>
+				</form> 
+			</div>
+		</div>
+	</div>
+
+	<!-- Booking Confirmation Message Modal -->
+	<div class="modal fade" id="bookingConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="bookingConfirmationModal"
+	  aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="bookingConfirmationModalLabel">Booking Confirmation</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body" id="msg">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+</body>
+</html>
+
+<!-- Scripts -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<script type="text/javascript" src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+<!-- for multistep modal form -->
+<script type="text/javascript" src="js/multi-step-modal.js"></script>
+
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+	
+sendEvent = function(sel, step) {
+    var sel_event = new CustomEvent('next.m.' + step, {detail: {step: step}});
+    window.dispatchEvent(sel_event);
+}
+
+// function to validate Phone Number, Number of Passengers, Unit Number, Street Number to allow numeric values only
+function validate(evt) {
+	var theEvent = evt || window.event;
+
+	// Handle paste
+	if (theEvent.type === 'paste') {
+	  	key = event.clipboardData.getData('text/plain');
+	} else {
+		// Handle key press
+		var key = theEvent.keyCode || theEvent.which;
+		key = String.fromCharCode(key);
+	}
+	var regex = /[0-9]|\./;
+	if( !regex.test(key) ) {
+		theEvent.returnValue = false;
+		if(theEvent.preventDefault) theEvent.preventDefault();
+	}
+}
+</script>
+
